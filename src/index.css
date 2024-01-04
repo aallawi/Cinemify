@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --gradient: linear-gradient(180deg, #00bcaf00, #00bcb1 100%)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.lazy-load-image-background {
+    width: 100%;
+    height: 100%;
+}
+.lazy-load-image-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* hero */
+.hero_input {
+    width: calc(100% - 100px);
+}
+.background_gradient {
+    background-image: var(--gradient);
+}
