@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
-import Img from "../img/Img";
+import useFetch from "../../../hooks/useFetch";
+import Img from "../../../components/img/Img";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero relative w-full h-[450px] flex justify-center items-center bg-secondary md:h-screen">
+    <div className="hero relative w-full h-[450px] flex justify-center items-center bg-primary md:h-screen">
       {!loading && (
         <div className="good absolute top-0 left-0 w-full h-full opacity-70 overflow-hidden">
           <Img src={background} />
@@ -50,7 +50,7 @@ const Hero = () => {
             placeholder="Search for a movie or tv show...."
           />
           <button
-            className="w-[100px] h-[50px] text-[17px] rounded-r-[40px] bg-primary md:h-[60px] md:text-[20px]"
+            className="w-[120px] h-[50px] text-[17px] font-[500] rounded-r-[40px] bg-secondary text-black md:h-[60px] md:text-[20px]"
             onClick={searchHandler}
           >
             Search
