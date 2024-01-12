@@ -58,7 +58,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="background_gradient absolute bottom-0 left-0 w-full h-[150px]" />
+      <div className="background_gradient_bt absolute bottom-0 left-0 w-full h-[150px]" />
     </div>
   );
 };

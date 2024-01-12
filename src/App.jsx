@@ -4,8 +4,8 @@ import { fetchDataFromApi } from "./utils/api";
 import { getApiConfiguration } from "./store/homeSlice";
 import { useDispatch } from "react-redux";
 
-// import Header from "./components/header/Header";
-// import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 
 function App() {
@@ -29,11 +29,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }

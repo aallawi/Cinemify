@@ -6,6 +6,7 @@ export default {
       colors: {
         primary: "#00bcb1",
         secondary: "#ffd600",
+        lightBalck: "#00000030",
       },
     },
   },

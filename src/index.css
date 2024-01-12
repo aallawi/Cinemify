@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +8,6 @@
 :root {
     --primary: #00bcb1;
     --secondary: #ffd600;
-    --gradient: linear-gradient(180deg, #00bcaf00, #00bcb1 100%)
 }
 
 * {
@@ -37,15 +37,26 @@
     object-position: center;
 }
 
+.background_gradient_bt {
+    background-image: linear-gradient(180deg, #00bcaf00, #00bcb1 100%)
+}
+.background_gradient_tb {
+    background-image: linear-gradient(0deg, #00bcaf00, #00bcb1 100%)
+}
+
+/* header */
+.logo {
+    font-family: 'Oleo Script', system-ui;
+}
+.search_input {
+    width: calc(100% - 50px);
+}
+
 
 /* hero */
 .hero_input {
     width: calc(100% - 100px);
 }
-.background_gradient {
-    background-image: var(--gradient);
-}
-
 
 /* carousel */
 .carousel_item_width {
@@ -106,4 +117,9 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* footer */
+.shadow-custom {
+    box-shadow: 0px 0px 50px -8px var(--secondary),0px 45px 26px 0px var(--secondary)
 }
