@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
+import Details from "./pages/details/Details";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/:mediaType/:id" element={<Details />} />
       </Routes>
       <Footer />
     </BrowserRouter>

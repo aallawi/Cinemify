@@ -47,7 +47,7 @@ const Header = () => {
   };
 
   const navigationHandler = (type) => {
-    if (type === "movie") {
+    if (type === "Movies") {
       navigate("/explore/movie");
     } else {
       navigate("/explore/tv");
@@ -73,7 +73,7 @@ const Header = () => {
       className={`fixed w-full h-[60px] z-[99] transition-all duration-1000 select-none text-black
     ${
       show === "top"
-        ? "bg-lightBalck"
+        ? "bg-lightBalck text-white"
         : show === "show"
         ? "bg-white"
         : show === "hide"
@@ -84,7 +84,7 @@ const Header = () => {
       <div className="(( w-full max-w-[1200px] mx-auto px-[20px] )) flex justify-between items-center">
         {/* logo */}
         <div
-          className="flex items-center gap-[8px]"
+          className="flex items-center gap-[8px] cursor-pointer"
           onClick={() => navigate("/")}
         >
           <img className="w-[50px] h-[50px]" src={logo} alt="logo" />
@@ -151,7 +151,7 @@ const Header = () => {
         {/* Search */}
         {showSearch && (
           <div className="absolute left-0 top-[60px] w-full bg-white p-[10px] transition-all duration-1000">
-            <div className="(( w-full max-w-[1200px] mx-auto px-[20px] )) flex justify-between items-center">
+            <div className="(( w-full max-w-[1200px] mx-auto px-[20px] )) flex justify-between items-center text-black">
               <input
                 className="search_input outline-none border-none py-[5px]"
                 type="text"

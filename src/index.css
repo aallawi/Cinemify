@@ -22,10 +22,6 @@
     display: none;
 }
 
-.background {
-    background-color: var(--primary);
-}
-
 .lazy-load-image-background {
     width: 100%;
     height: 100%;
@@ -44,7 +40,53 @@
     background-image: linear-gradient(0deg, #00bcaf00, #00bcb1 100%)
 }
 
-/* header */
+/* ================================= PlayIcon ======================= */
+.playbtn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+.playbtn svg {
+    width: 60px;
+}
+@media screen and (min-width: 768px) {
+    .playbtn svg {
+        width: 80px;
+    }
+}
+.playbtn .triangle {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 480;
+    stroke: white;
+    transform: translateY(0);
+    transition: all 0.7s ease-in-out;
+}
+.playbtn .circle {
+    stroke: white;
+    stroke-dasharray: 650;
+    stroke-dashoffset: 1300;
+    transition: all 0.5s ease-in-out;
+}
+.playbtn .text {
+    font-size: 20px;
+    transition: all 0.7s ease-in-out;
+}
+.playbtn:hover .triangle {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    stroke: var(--secondary);
+    animation: trailorPlay 0.7s ease-in-out;
+}
+.playbtn:hover .circle {
+    stroke-dashoffset: 0;
+    stroke: var(--secondary);
+}
+.playbtn:hover .text{
+    color: var(--secondary);
+}
+
+/* =============================== header ========================== */
 .logo {
     font-family: 'Oleo Script', system-ui;
 }
@@ -53,12 +95,12 @@
 }
 
 
-/* hero */
+/* ================================ hero =========================== */
 .hero_input {
     width: calc(100% - 100px);
 }
 
-/* carousel */
+/* ============================== carousel ========================== */
 .carousel_item_width {
     width: 125px
 }
@@ -109,6 +151,7 @@
 .CircularProgressbar .CircularProgressbar-text {
     font-size: 35px;
     font-weight: 800;
+    fill: black
 }
 
 .one_line {   
@@ -119,7 +162,32 @@
     text-overflow: ellipsis;
 }
 
-/* footer */
+/* ========================== detailsBanner ======================== */
+.info {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.674);
+    padding: 15px 0;
+    display: flex;
+    /* flex py-[15px] border-[1px] border-[white] */
+}
+.infoItem {
+    margin-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+     /* mr-[10px] flex flex-wrap */
+}
+.text {
+    margin-right: 10px;
+    opacity: 0.5;
+    line-height: 24px;
+    /* mr-[10px] opacity-[0.5] leading-[25px] */
+}
+.bold {
+    font-weight: 600;
+    opacity: 1;
+    /*  text-[600] opacity-[1] */
+}
+
+/* =============================== footer ========================== */
 .shadow-custom {
     box-shadow: 0px 0px 50px -8px var(--secondary),0px 45px 26px 0px var(--secondary)
 }

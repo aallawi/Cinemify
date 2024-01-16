@@ -7,6 +7,7 @@ export default {
         primary: "#00bcb1",
         secondary: "#ffd600",
         lightBalck: "#00000030",
+        layer: "#00bcb1cf",
       },
     },
   },

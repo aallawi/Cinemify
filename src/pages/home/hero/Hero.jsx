@@ -29,7 +29,7 @@ const Hero = () => {
   return (
     <div className="hero relative w-full h-[450px] flex justify-center items-center bg-primary md:h-screen">
       {!loading && (
-        <div className="good absolute top-0 left-0 w-full h-full opacity-70 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-70 overflow-hidden">
           <Img src={background} />
         </div>
       )}

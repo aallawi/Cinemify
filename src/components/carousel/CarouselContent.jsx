@@ -64,14 +64,15 @@ const CarouselContent = ({ loading, data, endpoint, subtitle }) => {
                 <div
                   key={item.id}
                   className="carousel_item_width shrink-0 cursor-pointer"
-                  // onClick={() =>
-                  //   navigate()
-                  // }
+                  onClick={() => navigate(`/${endpoint}/${item.id}`)}
                 >
                   <div className="box_style relative w-full flex items-end justify-between">
                     <Img src={posterUrl} />
-                    <Rating rating={item.vote_average.toFixed(1)} />
-                    <Genres data={item.genre_ids.slice(0, 2)} />
+                    <Rating
+                      rating={item.vote_average.toFixed(1)}
+                      css="relative bottom-[-20px] left-[10px] w-[40px] h-[40px] p-[2px] bg-white rounded-full >> md:w-[50px] md:h-[50px] md:bottom-[-25px]"
+                    />
+                    <Genres data={item.genre_ids.slice(0, 2)} css="relative" />
                   </div>
                   <div className="py-[20px] md:py-[30px]">
                     <span className="one_line block text-[18px] font-[500] >> md:text-[22px]">

@@ -5,12 +5,12 @@ import Trending from "./trending/Trending";
 
 const Home = () => {
   return (
-    <>
+    <div className="bg-primary">
       <Hero />
       <Trending />
       <Popular />
       <TopRated />
-    </>
+    </div>
   );
 };
 

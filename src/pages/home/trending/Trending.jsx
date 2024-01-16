@@ -12,19 +12,17 @@ const Trending = () => {
     setEndpoint(tab === "Day" ? "day" : "week");
   };
   return (
-    <div className="background">
-      <div className="px-[20px] w-full max-w-[1200px] mx-auto">
-        <CarouselTitle
-          title="Trending"
-          options={["Day", "Week"]}
-          onOptionChange={onOptionChange}
-        />
-        <CarouselContent
-          loading={loading}
-          data={data?.results}
-          endpoint={endpoint}
-        />
-      </div>
+    <div className="px-[20px] w-full max-w-[1200px] mx-auto">
+      <CarouselTitle
+        title="Trending"
+        options={["Day", "Week"]}
+        onOptionChange={onOptionChange}
+      />
+      <CarouselContent
+        loading={loading}
+        data={data?.results}
+        endpoint="movie"
+      />
     </div>
   );
 };

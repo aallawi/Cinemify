@@ -12,19 +12,17 @@ const TopRated = () => {
     setEndpoint(tab === "Movies" ? "movie" : "tv");
   };
   return (
-    <div className="background">
-      <div className="px-[20px] w-full max-w-[1200px] mx-auto">
-        <CarouselTitle
-          title="Trending"
-          options={["Movies", "TV Shows"]}
-          onOptionChange={onOptionChange}
-        />
-        <CarouselContent
-          loading={loading}
-          data={data?.results}
-          endpoint={endpoint}
-        />
-      </div>
+    <div className="px-[20px] w-full max-w-[1200px] mx-auto">
+      <CarouselTitle
+        title="Trending"
+        options={["Movies", "TV Shows"]}
+        onOptionChange={onOptionChange}
+      />
+      <CarouselContent
+        loading={loading}
+        data={data?.results}
+        endpoint={endpoint}
+      />
     </div>
   );
 };

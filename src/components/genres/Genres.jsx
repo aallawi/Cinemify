@@ -1,8 +1,13 @@
-const Genres = ({ data }) => {
+const Genres = ({ data, css }) => {
   return (
-    <div className=" relative text-red-800">
+    <div className=" flex gap-[20px] mb-[20px]">
       {data.map((item, index) => (
-        <p key={index}>{item}</p>
+        <p
+          key={index}
+          className={`${css} rounded-[8px] bg-secondary font-[500] text-[18px] px-[10px]`}
+        >
+          {item}
+        </p>
       ))}
     </div>
   );
