@@ -1,6 +1,6 @@
 const Genres = ({ data, css }) => {
   return (
-    <div className=" flex gap-[20px] mb-[20px]">
+    <div className=" flex gap-[20px] mb-[20px] text-black">
       {data.map((item, index) => (
         <p
           key={index}

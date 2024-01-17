@@ -15,7 +15,6 @@ const DetailsBanner = ({ intro, crew }) => {
 
   // Fetch mediaType data
   const { loading, data } = useFetch(`/${mediaType}/${id}`);
-  console.log(data);
 
   // Video intro data
   const [show, setShow] = useState(false);
@@ -42,7 +41,7 @@ const DetailsBanner = ({ intro, crew }) => {
     <div className="relative w-full bg-primary overflow-hidden">
       {!loading && data && (
         <>
-          <div className="absolute left-0 top-0 w-full opacity-10 overflow-hidden md:min-h-screen">
+          <div className="absolute left-0 top-0 w-full opacity-30 overflow-hidden md:min-h-screen">
             <Img
               src={
                 data.poster_path
@@ -65,7 +64,7 @@ const DetailsBanner = ({ intro, crew }) => {
                 }
               />
             </div>
-            <div className="right text-black">
+            <div className="right text-white">
               {/* Name */}
               <h1 className="text-[28px] font-[500] md:text-[38px]">
                 {`${data.name || data.title} (${dayjs(
@@ -84,16 +83,14 @@ const DetailsBanner = ({ intro, crew }) => {
                   css="fill-[white] max-w-[70px] md:max-w-[90px]"
                 />
                 <div
-                  className="playbtn"
+                  className="playbtn hover:text-secondary transition duration-300"
                   onClick={() => {
                     setVideoId(intro.key);
                     setShow(true);
                   }}
                 >
                   <PlayIcon />
-                  <span className="font-[500] text-[25px] text-white hover:text-secondary transition duration-300">
-                    Watch Trailer
-                  </span>
+                  <span className="font-[500] text-[25px]">Watch Trailer</span>
                 </div>
               </div>
 
