@@ -9,7 +9,7 @@ const TopCast = ({ cast, loading }) => {
     <div className=" relative pb-[50px] w-full max-w-[1200px] mx-auto px-[20px] text-white">
       {!loading && cast?.length > 0 && (
         <>
-          <h1 className=" font-[600] text-[26px] mb-[25px]">Top Cast</h1>
+          <h1 className=" font-[600] text-[26px] mb-[15px]">Top Cast</h1>
           <div className=" flex gap-[20px] mx-[-20px] px-[20px] overflow-x-auto">
             {cast?.map((item) => (
               <div key={item.id} className=" text-center">

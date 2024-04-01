@@ -33,7 +33,7 @@ const CarouselContent = ({ loading, data, endpoint, subtitle }) => {
     <div className="pb-[40px]">
       <div className="relative">
         {subtitle && (
-          <div className="text-[20px] font-[600] mb-[10px] >> md:text-[25px]">
+          <div className="text-[20px] font-[600] mb-[15px] >> md:text-[25px]">
             {subtitle}
           </div>
         )}
@@ -63,10 +63,10 @@ const CarouselContent = ({ loading, data, endpoint, subtitle }) => {
               return (
                 <div
                   key={item.id}
-                  className="carousel_item_width shrink-0 cursor-pointer"
+                  className="cursor-pointer carousel_item_width shrink-0"
                   onClick={() => navigate(`/${endpoint}/${item.id}`)}
                 >
-                  <div className="box_style relative w-full flex items-end justify-between">
+                  <div className="relative flex items-end justify-between w-full box_style">
                     <Img src={posterUrl} />
                     <Rating
                       rating={item.vote_average.toFixed(1)}

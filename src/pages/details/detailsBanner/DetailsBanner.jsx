@@ -24,7 +24,7 @@ const DetailsBanner = ({ intro, crew }) => {
   const { url } = useSelector((state) => state.home);
 
   // Genres - Director - Writer
-  const genres = data?.genres?.map((g) => g.id);
+  const genres = data?.genres?.map((g) => g.name);
   const director = crew?.filter((d) => d.job === "Director");
   const writer = crew?.filter(
     (r) => r.job === "Screenplay" || r.job === "Story" || r.job === "Writer"
@@ -38,10 +38,10 @@ const DetailsBanner = ({ intro, crew }) => {
   };
 
   return (
-    <div className="relative w-full bg-primary overflow-hidden">
+    <div className="relative w-full overflow-hidden bg-primary">
       {!loading && data && (
         <>
-          <div className="absolute left-0 top-0 w-full opacity-30 overflow-hidden md:min-h-screen">
+          <div className="absolute top-0 left-0 w-full overflow-hidden opacity-30 md:min-h-screen">
             <Img
               src={
                 data.poster_path
@@ -64,7 +64,7 @@ const DetailsBanner = ({ intro, crew }) => {
                 }
               />
             </div>
-            <div className="right text-white">
+            <div className="text-white right">
               {/* Name */}
               <h1 className="text-[28px] font-[500] md:text-[38px]">
                 {`${data.name || data.title} (${dayjs(
@@ -83,7 +83,7 @@ const DetailsBanner = ({ intro, crew }) => {
                   css="fill-[white] max-w-[70px] md:max-w-[90px]"
                 />
                 <div
-                  className="playbtn hover:text-secondary transition duration-300"
+                  className="transition duration-300 playbtn hover:text-secondary"
                   onClick={() => {
                     setVideoId(intro.key);
                     setShow(true);

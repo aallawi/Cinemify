@@ -7,10 +7,10 @@ const VideosSection = ({ videos, loading }) => {
   const [show, setShow] = useState(false);
   const [videoId, setVideoId] = useState(null);
   return (
-    <div className=" relative pb-[50px] w-full max-w-[1200px] mx-auto px-[20px] text-white">
+    <div className=" relative pb-[50px] text-white (( w-full max-w-[1200px] mx-auto px-[20px] ))">
       {!loading && videos?.results?.length > 0 && (
         <>
-          <h1 className=" font-[600] text-[26px] mb-[25px]">Official Videos</h1>
+          <h1 className=" font-[600] text-[28px] mb-[15px]">Official Videos</h1>
           <div className=" flex gap-[10px] mx-[-20px] px-[20px] overflow-x-auto md:gap-[20px] md:mx-0 md:px-0">
             {videos?.results?.map((video) => (
               <div
@@ -21,9 +21,13 @@ const VideosSection = ({ videos, loading }) => {
                 }}
                 className="test w-[150px] shrink-0 md:w-[25%]"
               >
-                <div className="playbtn centerIcon mb-[15px]">
+                <div className=" playbtn centerIcon mb-[15px]">
+                  {/* <Img
+                    src={`https://img.youtube.com/vi/${video.key}/mqdefault.jpg`}
+                  /> */}
                   <img
                     src={`https://img.youtube.com/vi/${video.key}/mqdefault.jpg`}
+                    alt=""
                   />
                   <PlayIcon />
                 </div>
