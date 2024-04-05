@@ -102,7 +102,47 @@
 .playbtn:hover .text{
     color: var(--secondary);
 }
-
+/* =============================== Img ========================== */
+.lazy-load-image-background {
+    width: 100%;
+    height: 100%;
+}
+.carousel .lazy-load-image-background ,
+.width_movie_card .lazy-load-image-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.lazy-load-image-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+/* =============================== rating ========================== */
+.rating {
+    /* background-color: var(--secondary); */
+    background-color: white;
+    border-radius: 50%;
+    padding: 2px;
+}
+/* MovieCard */
+/* @media screen and (min-width: 768px)  {
+    .rating {
+        width: 50px;
+        height: 50px;
+    }
+} */
+.CircularProgressbar-text {
+    font-size: 34px;
+    font-weight: 700;
+    fill: var(--black);
+}
+.CircularProgressbar-trail {
+    stroke: transparent;
+}
 /* =============================== header ========================== */
 .logo {
     font-family: 'Oleo Script', system-ui;

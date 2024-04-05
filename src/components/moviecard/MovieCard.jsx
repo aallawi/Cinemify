@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 import Rating from "../rating/Rating";
 import Genres from "../genres/Genres";
+import Img from "../img/Img";
 import PosterFallback from "../../assets/no-poster.png";
 
 const MovieCard = ({ data, fromSearch, mediaType }) => {
@@ -17,19 +18,22 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
       className="width_movie_card mb-[25px] cursor-pointer shrink-0 hover:opacity-70 transition-all ease duration-500"
       onClick={() => navigate(`/${data.media_type || mediaType}/${data.id}`)}
     >
-      <div className="relative w-full flex items-end justify-between mb-[30px] aspect-w-1 aspect-h-1.5 bg-cover bg-center">
-        <img className="posterImg" src={posterUrl} />
+      <div className="relative w-full flex items-end justify-between box_style mb-[30px] bg-cover bg-center">
+        <Img
+          css="w-full block rounded-[12px] md:max-w-[350px]"
+          src={posterUrl}
+        />
         {!fromSearch && (
           <>
             <Rating
               rating={data.vote_average.toFixed(1)}
               css={
-                "hidden relative bg-white w-40 h-40 top-[30] md:flex md:w-50 md:h-50"
+                "relative top-[30px] bg-white shrink-0 w-[40px] h-[40px] md:w-[50px] md:h-[50px]"
               }
             />
             <Genres
               data={data.genre_ids.slice(0, 2)}
-              css={"hidden md:flex md:flex-wrap md:justify-end"}
+              css={"hidden relative md:flex md:flex-wrap md:justify-end"}
             />
           </>
         )}

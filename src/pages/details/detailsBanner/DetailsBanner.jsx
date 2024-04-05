@@ -38,10 +38,11 @@ const DetailsBanner = ({ intro, crew }) => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-primary">
+    <div className=" relative w-full bg-primary pt-[100px] mb-[50px] md:mb-0 md:min-h-[700px]">
       {!loading && data && (
         <>
-          <div className="absolute top-0 left-0 w-full overflow-hidden opacity-30 md:min-h-screen">
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-30">
+            {/* <img src={PosterFallback} /> */}
             <Img
               src={
                 data.poster_path
@@ -52,138 +53,142 @@ const DetailsBanner = ({ intro, crew }) => {
           </div>
 
           {/* content */}
-          <div className="relative w-full max-w-[1200px] mx-auto px-[20px] pt-[100px] pb-[20px] z-[1] flex flex-col items-center gap-[25px] >> md:flex-row md:items-start md:gap-[50px]">
-            <div className="left w-full max-w-[500px] h-full shrink-0 md:max-w-[350px]">
-              <img
-                className="box_style object-cover rounded-[15px]"
-                // src={background}
-                src={
-                  data.poster_path
-                    ? url.backdrop + data.poster_path
-                    : PosterFallback
-                }
-              />
-            </div>
-            <div className="text-white right">
-              {/* Name */}
-              <h1 className="text-[28px] font-[500] md:text-[38px]">
-                {`${data.name || data.title} (${dayjs(
-                  data?.release_date
-                ).format("YYYY")})`}
-              </h1>
-              <div className="italic text-slate-600 font-[500] pb-[20px] text-[18px] md:text-[20px]">
-                {data.tagline}
-              </div>
-
-              <Genres data={genres.slice(0, 2)} />
-
-              <div className="flex items-center gap-[25px] mb-[25px] select-none">
-                <Rating
-                  rating={data.vote_average.toFixed(1)}
-                  css="fill-[white] max-w-[70px] md:max-w-[90px]"
+          <div className="w-full max-w-[1200px] mx-auto px-[20px]">
+            <div className="relative flex flex-col gap-[25px] md:flex-row md:gap-[50px]">
+              <div className="left shrink-0">
+                <Img
+                  src={
+                    data.poster_path
+                      ? url.backdrop + data.poster_path
+                      : PosterFallback
+                  }
+                  css="w-full h-full block box_style rounded-[12px] md:max-w-[350px]"
                 />
-                <div
-                  className="transition duration-300 playbtn hover:text-secondary"
-                  onClick={() => {
-                    setVideoId(intro.key);
-                    setShow(true);
-                  }}
-                >
-                  <PlayIcon />
-                  <span className="font-[500] text-[25px]">Watch Trailer</span>
+              </div>
+              <div className="right">
+                {/* Name */}
+                <h1 className="text-[28px] font-[500] md:text-[38px]">
+                  {`${data.name || data.title} (${dayjs(
+                    data?.release_date
+                  ).format("YYYY")})`}
+                </h1>
+                <div className="italic text-slate-600 font-[500] pb-[20px] text-[18px] md:text-[20px]">
+                  {data.tagline}
                 </div>
-              </div>
 
-              {/* Overview */}
-              <div className="mb-[20px]">
-                <h4 className="font-[500] mb-[10px]">Overview</h4>
-                <p className="leading-[24px] lg:pr-[100px]">{data.overview}</p>
-              </div>
+                <Genres data={genres.slice(0, 2)} />
 
-              <div className="info">
-                {/* Status */}
-                {data.status && (
-                  <div className="infoItem">
-                    <span className="text bold">Status: </span>
-                    <span className="text">{data.status}</span>
+                <div className="flex items-center gap-[25px] mb-[25px] select-none">
+                  <Rating
+                    rating={data.vote_average.toFixed(1)}
+                    css="fill-[white] max-w-[70px] md:max-w-[90px]"
+                  />
+                  <div
+                    className="transition duration-300 playbtn hover:text-secondary"
+                    onClick={() => {
+                      setVideoId(intro.key);
+                      setShow(true);
+                    }}
+                  >
+                    <PlayIcon />
+                    <span className="font-[500] text-[25px]">
+                      Watch Trailer
+                    </span>
                   </div>
-                )}
-                {/* Release Date */}
-                {data.release_date && (
-                  <div className="infoItem">
-                    <span className="text bold">Release Date: </span>
+                </div>
+
+                {/* Overview */}
+                <div className="mb-[20px]">
+                  <h4 className="font-[500] mb-[10px]">Overview</h4>
+                  <p className="leading-[24px] lg:pr-[100px]">
+                    {data.overview}
+                  </p>
+                </div>
+
+                <div className="info">
+                  {/* Status */}
+                  {data.status && (
+                    <div className="infoItem">
+                      <span className="text bold">Status: </span>
+                      <span className="text">{data.status}</span>
+                    </div>
+                  )}
+                  {/* Release Date */}
+                  {data.release_date && (
+                    <div className="infoItem">
+                      <span className="text bold">Release Date: </span>
+                      <span className="text">
+                        {dayjs(data.release_date).format("MMM D, YYYY")}
+                      </span>
+                    </div>
+                  )}
+                  {/* Runtime */}
+                  {data.runtime && (
+                    <div className="infoItem">
+                      <span className="text bold">Runtime: </span>
+                      <span className="text">
+                        {ConvertMinutesToHoursAndMinutes(data.runtime)}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Director */}
+                {director?.length > 0 && (
+                  <div className="info">
+                    <span className="text bold">Director: </span>
                     <span className="text">
-                      {dayjs(data.release_date).format("MMM D, YYYY")}
+                      {director?.map((d, i) => (
+                        <span key={i}>
+                          {d.name}
+                          {director.length - 1 !== i && ", "}
+                        </span>
+                      ))}
                     </span>
                   </div>
                 )}
-                {/* Runtime */}
-                {data.runtime && (
-                  <div className="infoItem">
-                    <span className="text bold">Runtime: </span>
+
+                {/* Writer */}
+                {writer?.length > 0 && (
+                  <div className="info">
+                    <span className="text bold">Writer: </span>
                     <span className="text">
-                      {ConvertMinutesToHoursAndMinutes(data.runtime)}
+                      {writer?.map((d, i) => (
+                        <span key={i}>
+                          {d.name}
+                          {writer.length - 1 !== i && ", "}
+                        </span>
+                      ))}
+                    </span>
+                  </div>
+                )}
+
+                {/* Creator */}
+                {data?.created_by?.length > 0 && (
+                  <div className="info">
+                    <span className="text bold">Creator: </span>
+                    <span className="text">
+                      {data?.created_by?.map((d, i) => (
+                        <span key={i}>
+                          {d.name}
+                          {data?.created_by.length - 1 !== i && ", "}
+                        </span>
+                      ))}
                     </span>
                   </div>
                 )}
               </div>
-
-              {/* Director */}
-              {director?.length > 0 && (
-                <div className="info">
-                  <span className="text bold">Director: </span>
-                  <span className="text">
-                    {director?.map((d, i) => (
-                      <span key={i}>
-                        {d.name}
-                        {director.length - 1 !== i && ", "}
-                      </span>
-                    ))}
-                  </span>
-                </div>
-              )}
-
-              {/* Writer */}
-              {writer?.length > 0 && (
-                <div className="info">
-                  <span className="text bold">Writer: </span>
-                  <span className="text">
-                    {writer?.map((d, i) => (
-                      <span key={i}>
-                        {d.name}
-                        {writer.length - 1 !== i && ", "}
-                      </span>
-                    ))}
-                  </span>
-                </div>
-              )}
-
-              {/* Creator */}
-              {data?.created_by?.length > 0 && (
-                <div className="info">
-                  <span className="text bold">Creator: </span>
-                  <span className="text">
-                    {data?.created_by?.map((d, i) => (
-                      <span key={i}>
-                        {d.name}
-                        {data?.created_by.length - 1 !== i && ", "}
-                      </span>
-                    ))}
-                  </span>
-                </div>
-              )}
             </div>
+            <VideoPopup
+              show={show}
+              setShow={setShow}
+              videoId={videoId}
+              setVideoId={setVideoId}
+            />
           </div>
-          <VideoPopup
-            show={show}
-            setShow={setShow}
-            videoId={videoId}
-            setVideoId={setVideoId}
-          />
+          <div className="absolute bottom-0 left-0 w-full h-[250px] background_gradient_bt" />
         </>
       )}
-
-      <div className="absolute bottom-0 left-0 w-full h-[150px] background_gradient_bt" />
     </div>
   );
 };

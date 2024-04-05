@@ -30,7 +30,7 @@ const CarouselContent = ({ loading, data, endpoint, subtitle }) => {
   };
 
   return (
-    <div className="pb-[40px]">
+    <div className="carousel pb-[40px]">
       <div className="relative">
         {subtitle && (
           <div className="text-[20px] font-[600] mb-[15px] >> md:text-[25px]">
@@ -70,7 +70,7 @@ const CarouselContent = ({ loading, data, endpoint, subtitle }) => {
                     <Img src={posterUrl} />
                     <Rating
                       rating={item.vote_average.toFixed(1)}
-                      css="relative bottom-[-20px] left-[10px] w-[40px] h-[40px] p-[2px] bg-white rounded-full >> md:w-[50px] md:h-[50px] md:bottom-[-25px]"
+                      css="relative shrink-0 bottom-[-20px] left-[10px] w-[40px] h-[40px] p-[2px] bg-white rounded-full >> md:w-[50px] md:h-[50px] md:bottom-[-25px]"
                     />
                     <Genres data={item.genre_ids.slice(0, 2)} css="relative" />
                   </div>

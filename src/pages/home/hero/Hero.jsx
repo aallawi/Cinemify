@@ -22,14 +22,14 @@ const Hero = () => {
 
   const searchHandler = (event) => {
     if ((event.type == "click" || event.key == "Enter") && term.length > 0) {
-      // navigate();
+      navigate(`/search/${term}`);
     }
   };
 
   return (
     <div className="hero relative w-full h-[450px] flex justify-center items-center bg-primary md:h-screen">
       {!loading && (
-        <div className="absolute top-0 left-0 w-full h-full opacity-70 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-70">
           <Img src={background} />
         </div>
       )}

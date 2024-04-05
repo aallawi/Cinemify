@@ -3,7 +3,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 const Rating = ({ rating, css }) => {
   return (
-    <div className={css}>
+    <div className={`rating ${css}`}>
       <CircularProgressbar
         value={rating}
         maxValue={10}

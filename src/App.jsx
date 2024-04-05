@@ -9,6 +9,8 @@ import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 import Details from "./pages/details/Details";
 import Explore from "./pages/explore/Explore";
+import SearchResult from "./pages/searchResult/searchResult";
+import PageNotFound from "./pages/404/PageNotFound";
 
 function App() {
   const dispatch = useDispatch();
@@ -57,6 +59,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:mediaType/:id" element={<Details />} />
         <Route path="/explore/:mediaType" element={<Explore />} />
+        <Route path="/search/:query" element={<SearchResult />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>

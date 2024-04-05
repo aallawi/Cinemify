@@ -12,7 +12,7 @@ const TopCast = ({ cast, loading }) => {
           <h1 className=" font-[600] text-[26px] mb-[15px]">Top Cast</h1>
           <div className=" flex gap-[20px] mx-[-20px] px-[20px] overflow-x-auto">
             {cast?.map((item) => (
-              <div key={item.id} className=" text-center">
+              <div key={item.id} className="text-center ">
                 <div className=" relative w-[125px] h-[125px] mp-[15px] md:w-[175px] md:h-[175px] md:mb-[25px]">
                   <Img
                     src={

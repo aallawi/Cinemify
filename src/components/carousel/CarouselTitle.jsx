@@ -18,7 +18,7 @@ const CarouselTitle = ({ title, options, onOptionChange }) => {
           {options.map((tab, index) => (
             <span
               key={index}
-              className={`w-[80px] text-center cursor-pointer animate_tap sm:w-[100px] ${
+              className={`w-[100px] text-center cursor-pointer animate_tap ${
                 selectedTab === index ? "z-10" : ""
               }`}
               onClick={() => tabHandle(tab, index)}
@@ -27,7 +27,7 @@ const CarouselTitle = ({ title, options, onOptionChange }) => {
             </span>
           ))}
           <span
-            className="transition-all duration-500 absolute h-[30px] w-[80px] sm:w-[100px] bg-secondary rounded-[20px]"
+            className="transition-all duration-500 absolute h-[30px] w-[100px] bg-secondary rounded-[20px]"
             style={{ left }}
           />
         </div>
