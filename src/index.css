@@ -22,17 +22,6 @@
     display: none;
 }
 
-.lazy-load-image-background {
-    width: 100%;
-    height: 100%;
-}
-.lazy-load-image-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
 .background_gradient_bt {
     background-image: linear-gradient(180deg, #00bcaf00, #00bcb1 100%)
 }
@@ -107,6 +96,12 @@
     width: 100%;
     height: 100%;
 }
+.lazy-load-image-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 .carousel .lazy-load-image-background ,
 .width_movie_card .lazy-load-image-background {
     position: absolute;
@@ -115,12 +110,6 @@
     border-radius: 12px;
     overflow: hidden;
 }
-.lazy-load-image-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
 /* =============================== rating ========================== */
 .rating {
     /* background-color: var(--secondary); */
@@ -128,13 +117,6 @@
     border-radius: 50%;
     padding: 2px;
 }
-/* MovieCard */
-/* @media screen and (min-width: 768px)  {
-    .rating {
-        width: 50px;
-        height: 50px;
-    }
-} */
 .CircularProgressbar-text {
     font-size: 34px;
     font-weight: 700;
@@ -150,7 +132,6 @@
 .search_input {
     width: calc(100% - 50px);
 }
-
 
 /* ================================ hero =========================== */
 .hero_input {
