@@ -54,7 +54,7 @@ const DetailsBanner = ({ intro, crew }) => {
 
           {/* content */}
           <div className="w-full max-w-[1200px] mx-auto px-[20px]">
-            <div className="relative flex flex-col gap-[25px] md:flex-row md:gap-[50px]">
+            <div className="relative z-10 flex flex-col gap-[25px] md:flex-row md:gap-[50px]">
               <div className="left shrink-0">
                 <Img
                   src={

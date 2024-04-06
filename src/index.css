@@ -190,21 +190,7 @@
 .box_style {
     aspect-ratio: 1 / 1.5;
 }
-.lazy-load-image-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-}
-.lazy-load-image-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
+
 .CircularProgressbar .CircularProgressbar-text {
     font-size: 35px;
     font-weight: 800;
@@ -258,51 +244,6 @@
         width: calc(20% - 16px);
     }
 }
-/* .react-select__control {
-    border-radius: 20px !important;
-    padding: 0 5px !important;
-} */
-/* 
-.react-select__control {
-    border: 0;
-    outline: 0;
-    box-shadow: none;
-    // background-color: var(--black-light);
-    background-color: var(--secondary);
-    border-radius: 20px;
-}
-
-.react-select__value-container .react-select__placeholder,
-.react-select__value-container .react-select__input-container {
-    color: white;
-    margin: 0 10px;
-}
-
-.react-select__single-value {
-    color: white;
-}
-.react-select__multi-value {
-    // background-color: var(--black3); // 
-    background-color: var(--secondary);
-    border-radius: 10px;
-}
-.react-select__multi-value__label {
-    color: white;
-}
-.react-select__multi-value__remove {
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-}
-.react-select__multi-value__remove:hover {
-    // color: var(--black-lighter); //
-    color: var(--secondary);
-}
-.react-select__menu {
-    top: 40px;
-    margin: 0;
-    padding: 0;
-} */
 /* =============================== Spinner ========================== */
 .loadingSpinner {
     width: 100%;
